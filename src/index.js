@@ -7,9 +7,14 @@ import Navbar from "./components/Navbar";
 
 import "./styles.scss";
 
+import useLocalStorage from './components/Hooks/useLocalStorage';
+
+
 const App = () => {
   const [coinData, setCoinData] = useState([]);
 
+  const [local, setLocal] = useLocalStorage('')
+  
   useEffect(() => {
     axios
       .get(
